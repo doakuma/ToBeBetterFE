@@ -1,12 +1,12 @@
 import '../practice-placeholder.css'
 
-const CLS = () => {
+const AuthMethods = () => {
   return (
     <div className="practice-placeholder">
-      <h2>레이아웃 점프(CLS) 실습</h2>
+      <h2>인증 방식 이해 실습</h2>
       <p>이 실습은 준비 중입니다.</p>
     </div>
   )
 }
 
-export default CLS
+export default AuthMethods

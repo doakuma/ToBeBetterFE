@@ -1,12 +1,12 @@
 import '../practice-placeholder.css'
 
-const CLS = () => {
+const CSSScope = () => {
   return (
     <div className="practice-placeholder">
-      <h2>레이아웃 점프(CLS) 실습</h2>
+      <h2>CSS 스코프/우선순위 실습</h2>
       <p>이 실습은 준비 중입니다.</p>
     </div>
   )
 }
 
-export default CLS
+export default CSSScope

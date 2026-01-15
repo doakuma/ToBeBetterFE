@@ -1,12 +1,12 @@
 import '../practice-placeholder.css'
 
-const CLS = () => {
+const ListKey = () => {
   return (
     <div className="practice-placeholder">
-      <h2>레이아웃 점프(CLS) 실습</h2>
+      <h2>리스트 key/입력값 튐 실습</h2>
       <p>이 실습은 준비 중입니다.</p>
     </div>
   )
 }
 
-export default CLS
+export default ListKey

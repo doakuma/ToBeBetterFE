@@ -1,0 +1,17 @@
+.practice-placeholder {
+  padding: var(--spacing-xl);
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.practice-placeholder h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.practice-placeholder p {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+}
