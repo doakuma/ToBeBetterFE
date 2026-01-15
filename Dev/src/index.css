@@ -1,12 +1,99 @@
+/* 디자인 토큰 (CSS Variables) */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* 색상 */
+  --color-primary: #646cff;
+  --color-primary-hover: #535bf2;
+  --color-secondary: #6c757d;
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+  
+  /* 텍스트 색상 */
+  --text-primary: #213547;
+  --text-secondary: #6c757d;
+  --text-muted: #888;
+  --text-inverse: rgba(255, 255, 255, 0.87);
+  
+  /* 배경 색상 */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f9f9;
+  --bg-tertiary: #f5f5f5;
+  
+  /* 테두리 */
+  --border-color: #e0e0e0;
+  --border-radius: 8px;
+  --border-radius-sm: 4px;
+  --border-radius-lg: 12px;
+  
+  /* 간격 */
+  --spacing-xs: 0.25rem;   /* 4px */
+  --spacing-sm: 0.5rem;    /* 8px */
+  --spacing-md: 1rem;      /* 16px */
+  --spacing-lg: 1.5rem;    /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-2xl: 3rem;     /* 48px */
+  
+  /* 타이포그래피 */
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Avenir, Helvetica, Arial, sans-serif;
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-base: 1rem;    /* 16px */
+  --font-size-lg: 1.125rem;  /* 18px */
+  --font-size-xl: 1.25rem;   /* 20px */
+  --font-size-2xl: 1.5rem;  /* 24px */
+  --font-size-3xl: 2rem;    /* 32px */
+  --font-size-4xl: 2.5rem;  /* 40px */
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* 그림자 */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  
+  /* 전환 */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 350ms ease;
+  
+  /* 레이아웃 */
+  --container-max-width: 1280px;
+  --content-max-width: 900px;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* 다크모드 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: rgba(255, 255, 255, 0.87);
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --text-muted: rgba(255, 255, 255, 0.4);
+    --bg-primary: #242424;
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #2a2a2a;
+    --border-color: #404040;
+  }
+}
 
+/* 기본 스타일 리셋 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -14,55 +101,60 @@
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
-body {
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--text-primary);
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: var(--font-size-4xl);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 button {
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all var(--transition-base);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:hover {
+  border-color: var(--color-primary);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }

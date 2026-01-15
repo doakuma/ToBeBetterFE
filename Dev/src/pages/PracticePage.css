@@ -1,0 +1,92 @@
+.practice-page {
+  min-height: 100vh;
+  padding: var(--spacing-xl);
+}
+
+.practice-page__container {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.practice-page__header {
+  margin-bottom: var(--spacing-2xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.practice-page__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.practice-page__breadcrumb-link {
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.practice-page__breadcrumb-link:hover {
+  color: var(--color-primary);
+}
+
+.practice-page__breadcrumb-separator {
+  color: var(--text-muted);
+}
+
+.practice-page__title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.practice-page__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.practice-page__level {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.practice-page__description {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.practice-page__content {
+  margin-top: var(--spacing-2xl);
+}
+
+.practice-page__back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  margin-bottom: var(--spacing-xl);
+}
+
+.practice-page__back-button:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
