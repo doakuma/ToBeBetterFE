@@ -1,11 +1,41 @@
+import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { docsConfig } from '../data/docs-config'
 import './PracticePage.css'
 
 const PracticePage = () => {
   const { docId, practiceId } = useParams()
+  const [PracticeComponent, setPracticeComponent] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
   const doc = docsConfig.find(doc => doc.id === docId)
   const practice = doc?.practices.find(p => p.id === practiceId)
+
+  useEffect(() => {
+    const loadComponent = async () => {
+      setLoading(true)
+      setError(null)
+
+      if (!practice?.component) {
+        setError('컴포넌트를 찾을 수 없습니다.')
+        setLoading(false)
+        return
+      }
+
+      try {
+        const module = await practice.component()
+        setPracticeComponent(() => module.default)
+      } catch (err) {
+        console.error('컴포넌트 로드 실패:', err)
+        setError('컴포넌트를 불러오는 중 오류가 발생했습니다.')
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadComponent()
+  }, [docId, practiceId, practice])
 
   if (!doc || !practice) {
     return (
@@ -41,10 +71,9 @@ const PracticePage = () => {
           </div>
         </header>
         <div className="practice-page__content">
-          <Link to={`/docs/${docId}`} className="practice-page__back-button">
-            ← 목록으로 돌아가기
-          </Link>
-          <p>연습 내용이 여기에 표시됩니다.</p>
+          {loading && <div className="practice-page__loading">로딩 중...</div>}
+          {error && <p className="practice-page__error">{error}</p>}
+          {PracticeComponent && <PracticeComponent />}
         </div>
       </div>
     </div>

@@ -117,3 +117,30 @@
 .doc-page__practice-item:hover .doc-page__practice-arrow {
   transform: translateX(4px);
 }
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .doc-page {
+    padding: var(--spacing-md);
+  }
+
+  .doc-page__title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .doc-page__practices-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .doc-page__practice-item {
+    padding: var(--spacing-md);
+  }
+
+  .doc-page__practice-title {
+    font-size: var(--font-size-base);
+  }
+
+  .doc-page__practice-description {
+    font-size: var(--font-size-sm);
+  }
+}

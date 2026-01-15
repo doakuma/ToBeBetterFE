@@ -57,3 +57,26 @@
 .home__doc-link:hover {
   color: var(--color-primary);
 }
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .home {
+    padding: var(--spacing-md);
+  }
+
+  .home__title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .home__subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .home__doc-item {
+    padding: var(--spacing-md);
+  }
+
+  .home__doc-link {
+    font-size: var(--font-size-lg);
+  }
+}
